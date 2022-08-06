@@ -5,12 +5,12 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="container">
   <h1>しりとり</h1>
 
   <p id="previousWord"></p>
   <input id="nextWordInput" type="text" />
-  <button  class="cp_button03" id="nextWordSendButton">送信</button>
-  <div class="container">
+  <button id="nextWordSendButton">送信</button>
     
   </div>
   <script type="module">
@@ -36,6 +36,8 @@
         alert(await response.text());
         return;
       }
+
+      
       const previousWord = await response.text();
       const para = document.querySelector("#previousWord");
       para.innerText = `前の単語：${previousWord}`;
